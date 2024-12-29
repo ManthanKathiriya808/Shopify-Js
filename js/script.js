@@ -6,7 +6,7 @@ let product = document.getElementById("product")
 
 let cartData= JSON.parse(localStorage.getItem("cartData")) || []
 window.onload= showData(data);
-window.onload= showCart();
+window.onload= showCart(cartData);
 
 
 document.getElementById("search").addEventListener("keyup",function(e){
@@ -119,22 +119,21 @@ function showData(data){
 
 function setcartData(cd){
 localStorage.setItem("cartData",JSON.stringify(cd))
-
 }
 
 
 
 
 function addCart(id){
-  console.log(id)
+  // console.log(id)
   let addCartData = data.filter((ele) => ele._id == id)
   
-//   addCartData.map((ele) => {
-//     if(ele.id == id){
-//       ele.quantity = 1 
-//     }
-//     return ele
-//   })
+  addCartData.map((ele) => {
+    if(ele._id == id){
+      ele.quentity = 1 
+    }
+    return ele
+  })
 
 cartData = [...cartData, ...addCartData]
 
@@ -142,11 +141,16 @@ cartData = [...cartData, ...addCartData]
 
 setcartData(cartData)
 
-console.log(cartData)
+// console.log(cartData)
 
 
-document.getElementById("cartLength").innerHTML = cartData.lenght
+document.getElementById("cartLen").innerHTML = cartData.length
+
+// console.log(cartData.lenght)
 }
+
+document.getElementById("cartLen").innerHTML = cartData.length
+
 
 
 
