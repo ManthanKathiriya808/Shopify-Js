@@ -126,6 +126,8 @@
   </script> -->
 
   <script>
+
+document.getElementById("cartLen").innerHTML = cartData.length
     
   window.onload= showCart(cartData);
     window.onload = showTotal(cartData);
@@ -174,14 +176,10 @@ showCart(cartData)
 
 
 
-    function showCart(cartData){
+function showCart(cartData){
+  console.log(cartData)
 
-// console.log("show")
 let cart = document.getElementById("cart")
-
-// console.log(cartData)
-
-
 cart.innerHTML =""
 
 cartData.map((ele) =>
@@ -192,7 +190,7 @@ cart.innerHTML += `
     <td>
     <img class="img-fluid " width="100px" src=${ele.image}  alt="${ele.title}" /></td>
         <td class="">${ele.title}</td>
-        <td class="">${ele.price *ele.quentity}</td>
+        <td class="qPrice">${ele.price *ele.quentity}</td>
        <td><i class="ri-add-fill btn btn-dark btn-sm" onclick="inCount(${ele._id})"></i>
        <span class="btn btn-outline-dark btn-sm">${ele.quentity}</span>
        <i class="ri-subtract-fill btn btn-danger btn-sm"  onclick="decCount(${ele._id})"></i></td>
@@ -200,31 +198,41 @@ cart.innerHTML += `
  </tr>
 
 `
-// console.log(ele.title)
-
-// console.log(ele.quentity)
-showTotal(cartData)
+document.getElementById("cartLen").innerHTML = cartData.length
+showTotal()
 })
 
 
 
 }
+
+
+
+  // console.log(total)
     
-function showTotal(cartData){
+function showTotal(){
+
+  // console.log(qPrice)
+let total =0
+
+  let qPrice = document.querySelectorAll(".qPrice")
+    //  console.log(qPrice)
+  qPrice.forEach((ele) => {
+     total += +ele.innerText
+  })
+
 
   let gtotal =document.getElementById("gtotal")
    gtotal.innerHTML = ""
-  // cartData = JSON.parse(localStorage.getItem("cartData"))
-  let totalPrice =0
-  cartData.map((ele) => {
+
+  
     gtotal.innerHTML += `
     <tr>
       <td><h4>Grand total :</h4></td>
-      <td>  ${totalPrice += ele.price * ele.quentity}</td>
+      <td>  <h6>${total}</h6></td>
     </tr>
    `
-  })
-}
+  }
 
   </script>
 
