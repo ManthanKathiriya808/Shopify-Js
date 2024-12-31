@@ -130,7 +130,7 @@
 document.getElementById("cartLen").innerHTML = cartData.length
     
   window.onload= showCart(cartData);
-    window.onload = showTotal(cartData);
+  window.onload = showTotal(cartData);
 
 
 function inCount(id){
@@ -144,6 +144,7 @@ function inCount(id){
 
   setcartData(cartData)
   showCart(cartData)
+  showData(data)
 }
 function decCount(id){
   cartData =cartData.map((ele) =>{
@@ -159,7 +160,9 @@ function decCount(id){
   }).filter((ele) => ele!=null)
 
   setcartData(cartData)
+  
   showCart(cartData)
+  showData(data)
 }
 
 
@@ -170,7 +173,9 @@ function deleCartData(id){
   // console.log(deleCart)
   setcartData(deleCart)
   cartData = JSON.parse(localStorage.getItem("cartData"))
+
 showCart(cartData)
+  
 } 
 
 
@@ -189,14 +194,23 @@ cartData.map((ele) =>
 
 cart.innerHTML += `
    <tr >
-    <td>
+    <td class="align-middle">
     <img class="img-fluid " width="100px" src=${ele.image}  alt="${ele.title}" /></td>
-        <td class="">${ele.title}</td>
-        <td class="qPrice">${ele.price *ele.quentity}</td>
-       <td><i class="ri-add-fill btn btn-dark btn-sm" onclick="inCount(${ele._id})"></i>
-       <span class="btn btn-outline-dark btn-sm">${ele.quentity}</span>
-       <i class="ri-subtract-fill btn btn-danger btn-sm"  onclick="decCount(${ele._id})"></i></td>
-      <td><button class="btn-close" onclick="deleCartData(${ele._id})" </button></td>
+        <td class="align-middle">${ele.title}</td>
+        <td class="qPrice align-middle">${ele.price *ele.quentity}</td>
+       <td class="align-middle">
+  <div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-dark btn-sm"  onclick="inCount(${ele._id})">
+    <i class="ri-add-fill  "></i></button>
+  <button type="button" class="btn btn-outline-dark disabled btn-sm">
+    ${ele.quentity}
+    </button>
+  <button type="button" class="btn btn-danger btn-sm" onclick="decCount(${ele._id})"><i class="ri-subtract-fill"  ></i></button>
+</div>
+        
+       
+       </td>
+      <td class="align-middle"><button class="btn-close" onclick="deleCartData(${ele._id})" </button></td>
  </tr>
 
 `

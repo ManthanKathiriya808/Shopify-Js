@@ -5,10 +5,11 @@ let product = document.getElementById("product")
 
 
 let cartData= JSON.parse(localStorage.getItem("cartData")) || []
+
 window.onload= showData(data);
-window.onload= moreModal(id);
-window.onload= showCart(cartData);
-window.onload= cartLenght(cartData);
+window.onload= moreModal(data);
+
+
 document.getElementById("cartLen").innerHTML = cartData.length
 
 
@@ -31,8 +32,6 @@ function hsort(){
   let sortedData = data.sort((a,b) => b.price - a.price) 
   showData(sortedData)
 }
-
-
 
 function electronic(){
 
@@ -59,8 +58,6 @@ function beautyProd(){
   let category = data.filter((ele) => ele.category == "Beauty Product" )
   showData(category)
 }
-
-
 
 function checkData(id){
   let cartData= JSON.parse(localStorage.getItem("cartData")) || []
@@ -89,11 +86,25 @@ function showData(data){
                       <h5 class="card-text text-danger">💲<span class="text-decoration-line-through">${ele.oldPrice}</span> ${ele.price}</h5>
         <div class="">
         <h5>⭐⭐⭐⭐⭐</h5>
-                        <button type="button"   onclick="addCart(${ele._id})" class="btn btn-primary my-3">Buy Now </button>
-                      <button type="button" onclick="moreModal(${ele._id})" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                     
+        
+          ${!checkData(ele._id) ? `  
+  <div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-dark btn-sm"  onclick="inCount(${ele._id})">
+    <i class="ri-add-fill  "></i></button>
+  <button type="button" class="btn btn-outline-dark disabled btn-sm">
+    ${ele.quentity}
+    </button>
+  <button type="button" class="btn btn-danger btn-sm" onclick="decCount(${ele._id})"><i class="ri-subtract-fill"  ></i></button>
+</div>
+        ` : ` <button type="button"   onclick="addCart(${ele._id})" class="btn btn-primary my-3">Buy Now </button>
+        
+        <button type="button" onclick="moreModal(${ele._id})" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                        More Info
                       </button>
-                 
+        `}
+                      
+                
         </div>
                     </div>
                   </div>
@@ -206,8 +217,8 @@ setcartData(cartData)
 
 
 document.getElementById("cartLen").innerHTML = cartData.length
-
-console.log(cartData.length)
+showData(data)
+// console.log(cartData.length)
 
 }
 
