@@ -6,6 +6,7 @@ let product = document.getElementById("product")
 
 let cartData= JSON.parse(localStorage.getItem("cartData")) || []
 window.onload= showData(data);
+window.onload= moreModal(id);
 window.onload= showCart(cartData);
 window.onload= cartLenght(cartData);
 document.getElementById("cartLen").innerHTML = cartData.length
@@ -61,7 +62,14 @@ function beautyProd(){
 
 
 
+function checkData(id){
+  let cartData= JSON.parse(localStorage.getItem("cartData")) || []
 
+  cartData = cartData.filter((ele) => ele._id == id)
+
+  return !cartData[0]
+ 
+}
 
 
 function showData(data){
@@ -71,15 +79,22 @@ function showData(data){
   data.map((ele) => {
 
     product.innerHTML +=`
-         <div class="col  ">
+         <div class="col  " >
                 <div class="card h-100  " >
                     <img src="${ele.image}" class="img-fluid " style="height:300px" alt="${ele.title}">
                     <div class="card-body h-100 d-flex justify-content-around flex-column">
                       <h5 class="card-title">${ele.title}</h5>
                       <p class="card-text">Category : ${ele.category}</p>
                      
-                      <h5 class="card-text text-danger">Rs.${ele.price}</h5>
-                      <a href="#" onclick="addCart(${ele._id})" class="btn btn-primary w-100 my-3">Buy Now</a>
+                      <h5 class="card-text text-danger">💲<span class="text-decoration-line-through">${ele.oldPrice}</span> ${ele.price}</h5>
+        <div class="">
+        <h5>⭐⭐⭐⭐⭐</h5>
+                        <button type="button"   onclick="addCart(${ele._id})" class="btn btn-primary my-3">Buy Now </button>
+                      <button type="button" onclick="moreModal(${ele._id})" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                       More Info
+                      </button>
+                 
+        </div>
                     </div>
                   </div>
             </div>
@@ -92,7 +107,51 @@ function showData(data){
 
 
 
+function moreModal(id){
 
+   
+  let modalBody = document.getElementById("modalBody")
+
+  modalBody.innerHTML = " "
+  
+   data.filter((ele) => ele._id == id).map((ele) =>   {
+
+  modalBody.innerHTML = `
+           <div class="row gy-3 h-100">
+          <div class="col-5 border">
+            <div class="box">
+              <img src="${ele.image}" class="img-fluid " alt="${ele.title}">
+            </div>
+          </div>
+          <div class="col-7 ">
+            <div class="box  px-5 h-100">
+              <div class="title mt-5">
+                <h1 class="card-title">${ele.title}</h1>
+              </div>
+              <hr>
+              <div class="category mt-4">
+        <h4 class="card-text">Category : ${ele.category}</h4>
+              </div>
+              <hr>
+              <div class="category mt-4">
+           <h4 class="card-text">Brand : ${ele.brand}</h4>
+              </div>
+              <hr>
+              <div class="price mt-4">
+              <h4 class="card-text"> Price:💲<span class="text-decoration-line-through">${ele.oldPrice}</span> ${ele.price}</h4>
+              </div>
+              <hr>
+              <div class="price mt-4">
+              <h4 class="card-text"> description: <span>${ele.des}</span></h4>
+              </div>
+              <hr>
+            </div>
+          </div>
+        </div>
+
+      `
+    })
+}
 
 
 

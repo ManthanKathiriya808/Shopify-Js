@@ -151,10 +151,12 @@ function decCount(id){
       if(ele.quentity > 1){
         ele.quentity -= 1;
       }
-
+      else{
+        return ele =null
+      }
     }
     return ele
-  })
+  }).filter((ele) => ele!=null)
 
   setcartData(cartData)
   showCart(cartData)
@@ -212,11 +214,11 @@ showTotal()
     
 function showTotal(){
 
-  // console.log(qPrice)
+
 let total =0
 
   let qPrice = document.querySelectorAll(".qPrice")
-    //  console.log(qPrice)
+    
   qPrice.forEach((ele) => {
      total += +ele.innerText
   })
