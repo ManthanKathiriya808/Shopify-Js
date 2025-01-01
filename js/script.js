@@ -69,6 +69,44 @@ function checkData(id){
 }
 
 
+
+
+function inCount(id){
+  cartData =cartData.map((ele) =>{
+    if(ele._id == id){
+      ele.quentity += 1;
+
+    }
+    return ele
+  })
+
+  showData(data)
+  showCart(cartData)
+  setcartData(cartData)
+ 
+}
+function decCount(id){
+  cartData =cartData.map((ele) =>{
+    if(ele._id == id){
+      if(ele.quentity > 1){
+        ele.quentity -= 1;
+      }
+      else{
+        return ele =null
+      }
+    }
+    return ele
+  }).filter((ele) => ele!=null)
+
+  setcartData(cartData)
+  
+  showCart(cartData)
+  showData(data)
+  location.reload();
+}
+
+
+
 function showData(data){
 
   product.innerHTML = ""
