@@ -69,7 +69,13 @@ function checkData(id){
 }
 
 
+function checkQuentity(id){
 
+ let cData = cartData.filter((ele)=> ele._id == id)
+
+return cData[0].quentity
+ 
+}
 
 function inCount(id){
   cartData =cartData.map((ele) =>{
@@ -79,10 +85,10 @@ function inCount(id){
     }
     return ele
   })
-
+  setcartData(cartData)
   showData(data)
   showCart(cartData)
-  setcartData(cartData)
+
  
 }
 function decCount(id){
@@ -99,10 +105,10 @@ function decCount(id){
   }).filter((ele) => ele!=null)
 
   setcartData(cartData)
-  
-  showCart(cartData)
   showData(data)
-  location.reload();
+  showCart(cartData)
+
+
 }
 
 
@@ -114,10 +120,10 @@ function showData(data){
   data.map((ele) => {
 
     product.innerHTML +=`
-         <div class="col  " >
+         <div class="col-lg-3  col-md-4 col-sm-6 col-6 " >
                 <div class="card h-100  " >
                     <img src="${ele.image}" class="img-fluid " style="height:300px" alt="${ele.title}">
-                    <div class="card-body h-100 d-flex justify-content-around flex-column">
+                    <div class="card-body h-100 d-flex justify-content-around flex-column ">
                       <h5 class="card-title">${ele.title}</h5>
                       <p class="card-text">Category : ${ele.category}</p>
                      
@@ -144,7 +150,7 @@ function showData(data){
   <button type="button" class="btn btn-dark btn-sm"  onclick="inCount(${ele._id})">
     <i class="ri-add-fill  "></i></button>
   <button type="button" class="btn btn-outline-dark disabled btn-sm">
-    ${ele.quentity}
+  ${checkQuentity(ele._id)}
     </button>
   <button type="button" class="btn btn-danger btn-sm" onclick="decCount(${ele._id})"><i class="ri-subtract-fill"  ></i></button>
 </div>
