@@ -17,7 +17,7 @@
     <header class="border mt-0 pt-0 ">
         <nav class="navbar position-fixed w-100 mt-0 z-1 navbar-expand-lg bg-dark navbar-dark ">
             <div class="container-fluid ">
-              <a class="navbar-brand" href="#">Shoping Cart 🏪</a>
+              <a class="navbar-brand" href="#">Shopify🏪</a>
               <form class="d-flex " role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" id="search" aria-label="Search">
                 
@@ -68,8 +68,9 @@
 <!-- hero section -->
 
 
-        <!-- <div class="container-fluid m-0 p-0 img-fluid">
-            <div class="swiper mySwiper">
+         <div class="container-fluid  my-lg-5 my-md-5 my-sm-0 my-5 mb-3 pt-4 img-fluid">
+          <div class="box mt-lg-0 mt-md-0 mt-sm-0 mt-4">
+      <div class="swiper mySwiper ">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide img-fluid"><img src="https://m.media-amazon.com/images/G/31/img22/pcacc/bau/AmazonROG-Ally_1500-x-300._CB559270654_.jpg" alt=""></div>
                   <div class="swiper-slide img-fluid"><img src="https://m.media-amazon.com/images/G/31/img22/pcacc/zebbc/1500x300_1._CB580052785_.jpg"  alt=""></div>
@@ -77,16 +78,16 @@
                   
            
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
                 <div class="swiper-pagination"></div>
               </div>
-        </div> -->
+          </div>
+      
+        </div> 
  
 <!-- Button trigger modal -->
 
-<div class="container my-5 pt-5">
-  <div class="row pt-3 ">
+<div class="container">
+  <div class="row py-2 ">
     <div class="col text-center ">
       <a class="text-decoration-none btn btn-outline-dark" href="#" onclick="lsort()">Filter⬆️</a>
       <a class="text-decoration-none btn btn-outline-dark" href="#" onclick="hsort()">Filter⬇️</a>
@@ -249,22 +250,30 @@
   <script>
 document.getElementById("cartLen").innerHTML = cartData.length
 
+
     var swiper = new Swiper(".mySwiper", {
-        spaceBetween: 30,
-      centeredSlides: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-        pagination: {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      pagination: {
         el: ".swiper-pagination",
-        type: "progressbar",
+        clickable: true,
       },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
       },
     });
+
   </script>
 
 </html>

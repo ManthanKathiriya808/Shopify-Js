@@ -123,7 +123,7 @@ function showData(data){
          <div class="col-lg-3  col-md-4 col-sm-6 col-6 " >
                 <div class="card h-100  " >
                     <img src="${ele.image}" class="img-fluid " style="height:300px" alt="${ele.title}">
-                    <div class="card-body h-100 d-flex justify-content-around flex-column ">
+                    <div class="card-body py-0 h-100 d-flex justify-content-around flex-column ">
                       <h5 class="card-title">${ele.title}</h5>
                       <p class="card-text">Category : ${ele.category}</p>
                      
