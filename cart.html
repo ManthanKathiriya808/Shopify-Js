@@ -14,57 +14,71 @@
 </head>
 <body>
 
-    <header>
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-            <div class="container-fluid ">
-              <a class="navbar-brand" href="index.html">Shoping Cart 🏪</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="#" onclick="lsort()">Filter⬆️</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="#" onclick="hsort()">Filter⬇️</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Category
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#"></a></li>
-                      <li><a class="dropdown-item" onclick="electronic()" href="#">Electronics</a></li>
-                      <li><a class="dropdown-item" href="#" onclick="homeDecor()">Home Decoration</a></li>
-                      <li><a class="dropdown-item" onclick="fashion()" href="#">Fashion</a></li>
-                      <li><a class="dropdown-item" onclick="equipment()" href="#">Equipments</a></li>
-                      <li><a class="dropdown-item" onclick="beautyProd()" href="#">Beauty Product</a></li>
-                      
-                      
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-disabled="true">Disabled</a>
-                  </li>
+   
+  <header class="border mt-0 pt-0 ">
+    <nav class="navbar position-fixed w-100 mt-0 z-1 navbar-expand-lg bg-dark navbar-dark ">
+        <div class="container-fluid ">
+          <a class="navbar-brand" href="index.html">Shoping Cart 🏪</a>
+          <form class="d-flex " role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" id="search" aria-label="Search">
+            
+          </form>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#" onclick="lsort()">Filter⬆️</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#" onclick="hsort()">Filter⬇️</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Category
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#"></a></li>
+                  <li><a class="dropdown-item" onclick="electronic()" href="#">Electronics</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="homeDecor()">Home Decoration</a></li>
+                  <li><a class="dropdown-item" onclick="fashion()" href="#">Fashion</a></li>
+                  <li><a class="dropdown-item" onclick="equipment()" href="#">Equipments</a></li>
+                  <li><a class="dropdown-item" onclick="beautyProd()" href="#">Beauty Product</a></li>
+                  
+                  
                 </ul>
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" id="search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+        
 
-                <a href="cart.html" onclick="showCart()"><button  class="btn btn-dark fs-4 mx-4">🛒<b class="text-danger" id="cartLen"></b></button></a>
-              </div>
-            </div>
-          </nav>
-    </header>
+            <a href="cart.html" onclick="showCart()"><button  class="btn btn-dark fs-4 mx-lg-4 mx-md-4 mx-sm-0 mx-0">🛒<b class="text-danger" id="cartLen"></b></button></a>
+          </div>
+        </div>
+      </nav>
+</header>
 
 
-    <section>
-        <div class="container mt-5">
+<section class="mt-5 pt-3">
+  <div class="mt-5  container">
+      <div class="title">
+    <h1 class="display-5 fw-bolder">
+      Your Cart🛒
+    </h1>
+  </div>
+  </div>
+
+</section>
+
+    <section >
+        <div class="container pt-5">
           <div class="table-responsive">
             <table class="table table-striped table-hover">
                 <thead class="">

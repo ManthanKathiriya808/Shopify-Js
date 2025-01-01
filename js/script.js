@@ -154,11 +154,22 @@ function showData(data){
     </button>
   <button type="button" class="btn btn-danger btn-sm" onclick="decCount(${ele._id})"><i class="ri-subtract-fill"  ></i></button>
 </div>
-        ` : ` <button type="button"   onclick="addCart(${ele._id})" class="btn btn-primary my-3">Buy Now </button>
-        
-        <button type="button" onclick="moreModal(${ele._id})" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        ` : ` 
+            
+              <div class="row row-cols-lg-2 row-cols-md-2 row-cols-sm-1 row-cols-1 gy-1">
+                <div class="col ">
+                <button type="button"   onclick="addCart(${ele._id})" class="btn btn-primary w-100">Buy Now </button>
+                </div>
+                <div class="col ">
+                 <button type="button" onclick="moreModal(${ele._id})" class="btn btn-secondary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
                        More Info
                       </button>
+                </div>
+              </div>
+       
+        
+        
+       
         `}
                       
                 
@@ -185,13 +196,13 @@ function moreModal(id){
    data.filter((ele) => ele._id == id).map((ele) =>   {
 
   modalBody.innerHTML = `
-           <div class="row gy-3 h-100">
-          <div class="col-5 border">
+           <div class="row gy-3 row-cols-lg-2 row-cols-md-2 row-cols-sm-1 row-cols-1  h-100">
+          <div class=" border">
             <div class="box">
               <img src="${ele.image}" class="img-fluid " alt="${ele.title}">
             </div>
           </div>
-          <div class="col-7 ">
+          <div class=" ">
             <div class="box  px-5 h-100">
               <div class="title mt-5">
                 <h1 class="card-title">${ele.title}</h1>
