@@ -58,6 +58,8 @@
                 </ul>
             
 
+                <a href="register.html"><button  class="btn btn-danger  me-2">👤SignIn</button></a>
+                <a href="login.html" ><button  class="btn btn-warning ">👤Login</button></a>
                 <a href="cart.html" onclick="showCart()"><button  class="btn btn-dark fs-4 mx-lg-4 mx-md-4 mx-sm-0 mx-0">🛒<b class="text-danger" id="cartLen"></b></button></a>
               </div>
             </div>
@@ -163,7 +165,7 @@
               <div class="col-xl-4 col-lg-4 mb-50">
                   <div class="footer-widget">
                       <div class="footer-logo">
-                        <a class="navbar-brand" href="#">Shoping Cart 🏪</a>
+                        <a class="navbar-brand " href="#"><h1 class="display-5 text-white">Shoping Cart 🏪</h1></a>
                       </div>
                       <div class="footer-text">
                           <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
@@ -245,7 +247,7 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-
+      
         <!-- Initialize Swiper -->
   <script>
 document.getElementById("cartLen").innerHTML = cartData.length
@@ -254,6 +256,10 @@ document.getElementById("cartLen").innerHTML = cartData.length
     var swiper = new Swiper(".mySwiper", {
       slidesPerView: 1,
       spaceBetween: 0,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,

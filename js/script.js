@@ -146,19 +146,23 @@ function showData(data){
                      
         
           ${!checkData(ele._id) ? `  
-  <div class="btn-group w-100 mt-2" role="group" aria-label="Basic example">
+  <div class="btn-group w-100 mt-2 mb-3 " role="group" aria-label="Basic example">
   <button type="button" class="btn btn-dark btn-sm"  onclick="inCount(${ele._id})">
     <i class="ri-add-fill  "></i></button>
   <button type="button" class="btn btn-outline-dark disabled btn-sm">
+
+
+
   ${checkQuentity(ele._id)}
     </button>
   <button type="button" class="btn btn-danger btn-sm" onclick="decCount(${ele._id})"><i class="ri-subtract-fill"  ></i></button>
 </div>
         ` : ` 
             
-              <div class="row row-cols-lg-2 row-cols-md-2 row-cols-sm-1 row-cols-1 gy-1">
+              <div class="row mb-3 row-cols-lg-2 row-cols-md-2 row-cols-sm-1 row-cols-1 gy-1">
                 <div class="col ">
-                <button type="button"   onclick="addCart(${ele._id})" class="btn btn-primary w-100">Buy Now </button>
+            <button type="button"   onclick="addCart(${ele._id})" class="btn btn-primary w-100">Buy Now </button>
+                
                 </div>
                 <div class="col ">
                  <button type="button" onclick="moreModal(${ele._id})" class="btn btn-secondary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
