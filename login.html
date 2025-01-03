@@ -55,49 +55,49 @@
 
 
 </body>
-
+<script src="js/login.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 
 <script>
 
 
-    document.getElementById("login1").addEventListener("submit",function(e){
-        e.preventDefault()
+document.getElementById("login1").addEventListener("submit",function(e){
+    e.preventDefault()
 
-        
+    
 
-        let obj = {    
-            email:document.getElementById("email").value,
-            password:document.getElementById("password").value,
-        }
-        registation = JSON.parse(localStorage.getItem("registation"))
-
-
-
-            if( obj.email !="" && obj.password !=""){
-
-                let log= registation.filter((ele) => {
-
-                    if(ele.email == obj.email && ele.password == obj.password){
-                        return ele
-                    }
-                })
-             
-
-                if(log[0]){
-                    let user = log[0]
-                    localStorage.setItem("user", JSON.stringify(user));
-                    location.href="index.html"
-                }
-                else{
-        alert("user not register")
+    let obj = {    
+        email:document.getElementById("email").value,
+        password:document.getElementById("password").value,
     }
-            }
+    registation = JSON.parse(localStorage.getItem("registation"))
 
-            else{
-                alert("Please Register First")
+
+
+        if( obj.email !="" && obj.password !=""){
+
+            let log= registation.filter((ele) => {
+
+                if(ele.email == obj.email && ele.password == obj.password){
+                    return ele
+                }
+            })
+         
+
+            if(log[0]){
+                let activeUser = log[0]
+                localStorage.setItem("activeUser", JSON.stringify(activeUser));
+                location.href="index.html"
             }
-    })
+            else{
+    alert("user not register")
+}
+        }
+
+        else{
+            alert("Please Register First")
+        }
+})
 </script>
 </html>

@@ -70,6 +70,9 @@
 
 </body>
 
+
+<script src="js/script.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 
@@ -88,7 +91,7 @@ let registation =[]
             password:document.getElementById("password").value,
         }
 
-        registation = JSON.parse(localStorage.getItem("registation"))
+        registation = JSON.parse(localStorage.getItem("registation")) || []
 
 
         let log = registation.filter((ele) => {
@@ -98,20 +101,21 @@ let registation =[]
             }
         })
 
-    if(log){
+    if(log[0]){
         alert("User Already Exist")
     }
-     else if(obj.name !="" && obj.email !="" && obj.phone !="" && obj.password !=""){
+ else if(obj.name !="" && obj.email !="" && obj.phone !="" && obj.password !=""){
 
+
+        // localStorage.setItem("activeUser",JSON.stringify(obj) )
         registation.push(obj)
         localStorage.setItem("registation",JSON.stringify(registation))
-
         location.href ="login.html"
             }
-
+            
             else{
-                alert("Fill Correct Data")
+                alert("Fill All Data")
             }
-    })
-</script>
+        })
+    </script>
 </html>

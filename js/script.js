@@ -2,7 +2,7 @@
 
 let product = document.getElementById("product")
 
-
+activeUser = JSON.parse(localStorage.getItem("activeUser"))
 
 let cartData= JSON.parse(localStorage.getItem("cartData")) || []
 
@@ -145,7 +145,7 @@ function showData(data){
 </h5>
                      
         
-          ${!checkData(ele._id) ? `  
+          ${!checkData(ele._id) && activeUser ? `  
   <div class="btn-group w-100 mt-2 mb-3 " role="group" aria-label="Basic example">
   <button type="button" class="btn btn-dark btn-sm"  onclick="inCount(${ele._id})">
     <i class="ri-add-fill  "></i></button>
@@ -270,6 +270,7 @@ localStorage.setItem("cartData",JSON.stringify(cd))
 
 function addCart(id){
   
+ if(activeUser){
   let addCartData = data.filter((ele) => ele._id == id)
 
   addCartData.map((ele) => {
@@ -291,6 +292,12 @@ setcartData(cartData)
 document.getElementById("cartLen").innerHTML = cartData.length
 showData(data)
 // console.log(cartData.length)
+ }
+
+ else{
+
+  location.href = "register.html"
+ }
 
 }
 
