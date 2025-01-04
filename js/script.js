@@ -180,12 +180,14 @@ function showData(data){
     product.innerHTML +=`
          <div class="col-lg-3  col-md-4 col-sm-6 col-6 " >
                 <div class="card h-100  " >
-                    <img src="${ele.image}" class="img-fluid " style="height:300px" alt="${ele.title}">
-                    <div class="card-body py-0 h-100 d-flex justify-content-around flex-column ">
+                <div class="ratio ratio-4x3">
+                    <img src="${ele.image}" class="img-fluid " style="" alt="${ele.title}">
+                </div>
+                    <div class="card-body h-100 shadow py-0 d-flex  justify-content-end   flex-column ">
                       <h5 class="card-title">${ele.title}</h5>
                       <p class="card-text">Category : ${ele.category}</p>
                      
-                      <h5 class="card-text text-danger">💲<span class="text-decoration-line-through">${ele.oldPrice}</span> ${ele.price}</h5>
+                      <h6 class="card-text text-danger">💲<span class="text-decoration-line-through">${ele.oldPrice}</span> ${ele.price}</h6>
         <div class="">
         <h5>
 <div class="rating">
