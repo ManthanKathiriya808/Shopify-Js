@@ -22,6 +22,7 @@
                 <input class="form-control me-2" type="search" placeholder="Search" id="search" aria-label="Search">
                 
               </form>
+        
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -58,9 +59,22 @@
                 </ul>
             
 
-                <a href="register.html"><button  class="btn btn-danger  me-2">👤SignIn</button></a>
-                <a href="login.html" ><button  class="btn btn-warning ">👤Login</button></a>
+              
                 <a href="cart.html" onclick="showCart()"><button  class="btn btn-dark fs-4 mx-lg-4 mx-md-4 mx-sm-0 mx-0">🛒<b class="text-danger" id="cartLen"></b></button></a>
+
+
+                <div >
+                  <div class="btn-group ">
+                    <button type="button" class="btn text-white btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" >
+                      <i class="ri-user-line"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-lg-end dropdown-menu-md-end  dropdown-menu-sm-end py-4 px-2 border shadow "  id="auth">
+                 
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
               </div>
             </div>
           </nav>

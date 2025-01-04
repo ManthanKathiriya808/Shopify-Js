@@ -13,6 +13,64 @@ window.onload= moreModal(data);
 document.getElementById("cartLen").innerHTML = cartData.length
 
 
+
+
+
+let auth = document.getElementById("auth")
+
+auth.innerHTML = `
+
+${
+
+  activeUser
+  ?
+
+  `
+    
+                        <li><a class="dropdown-item"> <b>Name : </b>${activeUser.name}</a></li>
+          <li><a class="dropdown-item" > <b>Email : </b>${activeUser.email}</a></li>
+          <li><a class="dropdown-item" ><b>Number : </b>${activeUser.phone}</a></li>
+             <li><hr class="dropdown-divider"></li>
+             <li><a class="dropdown-item" >
+             <button class="btn btn-danger w-100" onclick="logOut()">
+  LogOut
+</button>
+             
+             
+             </a></li>
+
+             
+                 
+
+  `
+:
+
+`
+   <div style="width:300px">
+                    <li><h4>No User Found</h4></li>
+                    <li><p>Login First</p></li>
+                      <li><hr class="dropdown-divider"></li>
+                    <li>     <a href="register.html"><button  class="btn btn-danger w-100 mb-2">👤SignIn</button></a></li>
+                    <li>   <a href="login.html" ><button  class="btn btn-warning w-100">👤Login</button></a></li>
+                 
+   </div>
+             
+
+`
+}
+
+
+`
+
+function logOut(){
+
+   localStorage.removeItem("activeUser");
+   location.reload();
+}
+
+
+
+
 document.getElementById("search").addEventListener("keyup",function(e){
 
   let val = e.target.value.toUpperCase()
