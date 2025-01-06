@@ -16,7 +16,7 @@
 
    
   <header class="border mt-0 pt-0 ">
-    <nav class="navbar position-fixed w-100 mt-0 z-1 navbar-expand-lg bg-dark navbar-dark ">
+    <nav class="navbar position-fixed w-100 mt-0 z-3 navbar-expand-lg bg-dark navbar-dark ">
         <div class="container-fluid ">
           <a class="navbar-brand" href="index.html">Shopify🏪</a>
           <form class="d-flex " role="search">
@@ -100,7 +100,19 @@
         </section>
 
 
+<!-- coupen code -->
 
+<!-- <section>
+  <div class="container my-5">
+    <table class="table">
+     <tbody id="coupen">
+        
+     </tbody>
+    </table>
+  </div>
+</section> -->
+
+<!-- coupen code end -->
         <section>
           <div class="container my-5">
             <table class="table">
@@ -373,7 +385,8 @@ let total =0
     gtotal.innerHTML += `
     <tr>
       <td><h4>Grand total :</h4></td>
-      <td>  <h6>${total}</h6></td>
+      <td class="d-flex align-bottom "><h6><input type = "text"></h6><button class="btn btn-sm btn-success ms-2"> Apply Coupen</button> </td>
+      <td><h6>${total}</h6></td>
     </tr>
    `
   }
