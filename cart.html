@@ -364,6 +364,10 @@ showTotal()
 
 
 
+
+
+
+
   // console.log(total)
     
 function showTotal(){
@@ -384,12 +388,37 @@ let total =0
   
     gtotal.innerHTML += `
     <tr>
+
+    
       <td><h4>Grand total :</h4></td>
-      <td class="d-flex align-bottom "><h6><input type = "text"></h6><button class="btn btn-sm btn-success ms-2"> Apply Coupen</button> </td>
+      <td >
+        <form id="form1" class="d-flex align-items-center">
+          <h6><input type = "text" id="discount"></h6>
+          <button class="btn btn-sm btn-success ms-2"> Apply Coupen</button>
+        </form> 
+      </td>
       <td><h6>${total}</h6></td>
     </tr>
    `
   }
+
+
+
+
+
+
+
+
+  document.getElementById("form1").addEventListener("submit",function(e){
+  e.preventDefault();
+
+  let discount = document.getElementById("discount").value
+console.log("fdgkl")
+  // if(discount == String("manthan30")){
+  //   // total = (total*30)/100
+  //   console.log("applied")
+  // }
+})
 
   </script>
 
